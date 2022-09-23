@@ -60,9 +60,9 @@
 > q.save()
 
 ## Accedemos al contenido creado
-> q.question_text
-> q.pub_date
-> Question.objects.all()
+> q.question_text  <p>
+> q.pub_date  <p>
+> Question.objects.all()  <p>
 > >>> <QuerySet [<Question: Question object (1)>]>
 
 ## Modificamos los modelos para objtener una mejor salida
@@ -84,6 +84,39 @@
     def __str__(self):
         return self.choice_text
 ```
+## uso del doble __ con el método filter
+> Model.objects.filter(condición)  <p>
+> [Documentación](https://docs.djangoproject.com/en/4.1/topics/db/queries/#field-lookups-intro)  <p>
+> __gt = Mayor que  <p>
+> __gte = Mayor o igual que  <p>
+> __lt = Menor que  <p>
+> __lte = Menos o igual que  <p>
+> __startswith = Empieza con  <p>
+> __iexact: Un case-insenstive match.   <p>
+> __contains: Contiene  <p>
+> __icontains: Version case-insensitive de la anterior  <p>
+> __istartswith = version case-insensitive de startswith  <p>
+> __iendswith = version case-insensitive de endswith  <p>
+> __endswith = Termina con  <p>
+
+## Herramienta 'django-extensions'
+```shell
+pip install django-extensions 
+```
+> en el archivo settings
+```python
+
+INSTALLED_APPS = (
+    ...
+    'django_extensions',
+    ...
+)
+
+```
+```shell
+python3 manage.py shell_plus
+```
+
 ## ORM
 > Un ORM (Object-Relational Mapping) es una técnica que nos permite crear una Base de Datos Orientada a Objectos (virtual), que opera sobre la Base de Datos Relacional (real).
 Utilizando un ORM podemos operar sobre la base de datos aprovechando las características propias de la orientación a objetos, como herencia y polimorfismo.
